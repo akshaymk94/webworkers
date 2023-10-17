@@ -12,9 +12,9 @@ btnSum.addEventListener('click', function () {
     resultText.textContent = undefined;
 
     const sumWorker = new Worker('./sumWorker.js')
-    const tenBillion = 100000000;
+    const value = 100000000;
 
-    sumWorker.postMessage(tenBillion)
+    sumWorker.postMessage(value)
 
     sumWorker.onmessage = (e) => {
         resultText.textContent = e.data;
